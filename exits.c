@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * _strncpy - Copies a string up to n bytes.
+ * _strncpy - ino koma zvima bytes.
  *
- * @dest: The destination string to be copied to.
- * @src: The source string.
- * @n: The number of bytes to be copied.
+ * @dest: kwazviri kuno iswa kechi piri
+ * @src: pazviri kubva
+ * @n: ma Number ema bytes
  *
- * Return: A pointer to the resulting string.
+ * Return: Runongedzo
  */
 char *_strncpy(char *dest, char *src, int n)
 {
