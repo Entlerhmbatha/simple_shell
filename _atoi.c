@@ -2,60 +2,59 @@
 
 /**
  * interactive - return_interactive_mode
- * @info: struct_address
+ * @inf: struct_address
  *
- * Return: 1 if interactive mode, 0 otherwise
+ * Return: 1 mode, 0
  */
-int interactive(info_t *info)
+int interactive(info_t *inf)
 {
-	return (isatty(STDIN_FILENO) && info->readfd <= 2);
+	return (isatty(STDIN_FILENO) && inf->readfd <= 2);
 }
 
 /**
- * is_delim - checks if character is a delimeter
- * @c: the char to check
- * @delim: the delimeter string
- * Return: 1 if true, 0 if false
+ * is_deli - checks_delimeter
+ * @x: char_check
+ * @deli: delimeter_string
+ * Return: 1 success, 0 false
  */
-int is_delim(char c, char *delim)
+int is_deli(char x, char *deli)
 {
-	while (*delim)
-		if (*delim++ == c)
+	while (*deli)
+		if (*deli++ == x)
 			return (1);
 	return (0);
 }
 
 /**
- *_isalpha - checks for alphabetic character
- *@c: The character to input
- *Return: 1 if c is alphabetic, 0 otherwise
+ *_isalpha - checks_alphabetic_character
+ *@x: character_input
+ *Return: 1 if x_alphabet, 0 kan pasina
  */
 
-int _isalpha(int c)
+int _isalpha(int x)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	if ((x >= 'a' && x <= 'z') || (x >= 'A' && x <= 'Z'))
 		return (1);
 	else
 		return (0);
 }
 
 /**
- *_atoi - converts a string to an integer
- *@s: the string to be converted
- *Return: 0 if no numbers in string, converted number otherwise
+ *_atoi - converts_string_integer
+ *@z: string_converted
+ *Return: 0
  */
-
-int _atoi(char *s)
+int _atoi(char *z)
 {
-	int i, sign = 1, flag = 0, output;
+	int y, sign = 1, flag = 0, output;
 	unsigned int result = 0;
 
-	for (i = 0;  s[i] != '\0' && flag != 2; i++)
+	for (y = 0;  s[y] != '\0' && flag != 2; y++)
 	{
-		if (s[i] == '-')
+		if (s[y] == '-')
 			sign *= -1;
 
-		if (s[i] >= '0' && s[i] <= '9')
+		if (s[y] >= '0' && s[y] <= '9')
 		{
 			flag = 1;
 			result *= 10;
