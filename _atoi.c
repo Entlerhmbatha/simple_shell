@@ -2,38 +2,38 @@
 
 /**
  * interactive - return_interactive_mode
- * @inf: struct_address
+ * @info: struct_address
  *
  * Return: 1 mode, 0
  */
-int interactive(info_t *inf)
+int interactive(info_t *info)
 {
-	return (isatty(STDIN_FILENO) && inf->readfd <= 2);
+	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
 
 /**
- * is_deli - checks_delimeter
- * @x: char_check
- * @deli: delimeter_string
+ * is_delim - checks_delimeter
+ * @c: char_check
+ * @delim: delimeter_string
  * Return: 1 success, 0 false
  */
-int is_deli(char x, char *deli)
+int is_delim(char c, char *delim)
 {
-	while (*deli)
-		if (*deli++ == x)
+	while (*delim)
+		if (*delim++ == c)
 			return (1);
 	return (0);
 }
 
 /**
  *_isalpha - checks_alphabetic_character
- *@x: character_input
+ *@c: character_input
  *Return: 1 if x_alphabet, 0 kan pasina
  */
 
-int _isalpha(int x)
+int _isalpha(int c)
 {
-	if ((x >= 'a' && x <= 'z') || (x >= 'A' && x <= 'Z'))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	else
 		return (0);
@@ -41,20 +41,20 @@ int _isalpha(int x)
 
 /**
  *_atoi - converts_string_integer
- *@z: string_converted
+ *@s: string_converted
  *Return: 0
  */
-int _atoi(char *z)
+int _atoi(char *s)
 {
-	int y, sign = 1, flag = 0, output;
+	int i, sign = 1, flag = 0, output;
 	unsigned int result = 0;
 
-	for (y = 0;  s[y] != '\0' && flag != 2; y++)
+	for (i = 0;  s[i] != '\0' && flag != 2; i++)
 	{
-		if (s[y] == '-')
+		if (s[i] == '-')
 			sign *= -1;
 
-		if (s[y] >= '0' && s[y] <= '9')
+		if (s[i] >= '0' && s[i] <= '9')
 		{
 			flag = 1;
 			result *= 10;
